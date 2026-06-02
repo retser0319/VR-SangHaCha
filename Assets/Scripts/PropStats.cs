@@ -40,7 +40,8 @@ public class PropStats : MonoBehaviour
         if (health <= 0)
         {
             gold = 0;
-            Debug.Log($"[PropStats] {gameObject.name} 파괴! 골드 0");
+            Debug.Log($"[PropStats] {gameObject.name} 파괴!");
+            Destroy(gameObject);
         }
     }
 }
