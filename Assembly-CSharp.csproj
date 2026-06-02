@@ -72,6 +72,7 @@
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\GoldCollectZone.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\StepManager.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\AnchorVisuals.cs" />
   </ItemGroup>
