@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1692
     height: 1009.3334
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 146
+  controlID: 87
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 78
+  controlID: 88
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -324,9 +324,9 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 1
+    m_SearchArea: 0
     m_Folders:
-    - Assets/SciFi Warehouse Kit/Prefabs/Props/Crates Barrels Pallets
+    - Packages/com.unity.xr.openxr
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -336,16 +336,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SciFi Warehouse Kit/Prefabs/Props/Crates Barrels Pallets
+  - Packages/com.unity.xr.openxr
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\rnjs4\VR-SangHaCha
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 60da0000
-    m_LastClickedID: 55904
-    m_ExpandedIDs: 00000000fed7000000d8000002d8000004d8000006d80000
+    scrollPos: {x: 0, y: 356}
+    m_SelectedIDs: 6cda0000
+    m_LastClickedID: 55916
+    m_ExpandedIDs: 0000000006dc000008dc00000adc00000cdc00000edc0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +374,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fed7000000d8000002d8000004d8000006d80000
+    m_ExpandedIDs: 0000000006dc000008dc00000adc00000cdc00000edc0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -522,7 +522,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1efbffff
+      m_ExpandedIDs: 1efbffffb0b90000a0ba0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1056,9 +1056,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1.2684506, y: 4.188945, z: 30.354094}
+    m_Target: {x: -1.6751227, y: -2.2229433, z: -23.114769}
     speed: 2
-    m_Value: {x: 1.2684506, y: 4.188945, z: 30.354094}
+    m_Value: {x: -1.6751227, y: -2.2229433, z: -23.114769}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1104,13 +1104,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.19834994, y: 0.061228145, z: -0.012044767, w: 0.9783315}
+    m_Target: {x: -0.062323075, y: 0.27596214, z: -0.018385507, w: -0.95918244}
     speed: 2
-    m_Value: {x: -0.19834994, y: -0.061228145, z: 0.012044767, w: -0.97833145}
+    m_Value: {x: -0.062323075, y: 0.27596214, z: -0.018385507, w: -0.9591825}
   m_Size:
-    m_Target: 4.218182
+    m_Target: 10
     speed: 2
-    m_Value: 4.218182
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
