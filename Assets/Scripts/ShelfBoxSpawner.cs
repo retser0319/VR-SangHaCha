@@ -14,6 +14,8 @@ public class ShelfBoxSpawner : MonoBehaviour
     public GameObject[] spawnPrefabs;
 
     private int _lastSpawnFrame = -1;
+    private float _cooldownUntil = 0f;
+    private const float CooldownSeconds = 30f;
 
     void Awake()
     {
@@ -30,6 +32,15 @@ public class ShelfBoxSpawner : MonoBehaviour
     {
         if (Time.frameCount == _lastSpawnFrame) return;
         _lastSpawnFrame = Time.frameCount;
+
+        if (Time.time < _cooldownUntil)
+        {
+            float remaining = _cooldownUntil - Time.time;
+            Debug.Log($"[ShelfSpawner] {gameObject.name} 쿨타임 중 ({remaining:F1}초 남음)");
+            return;
+        }
+
+        _cooldownUntil = Time.time + CooldownSeconds;
         SpawnProp();
     }
 
