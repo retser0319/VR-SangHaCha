@@ -20,5 +20,7 @@ public class PlayerStats : MonoBehaviour
     {
         gold += amount;
         Debug.Log($"[PlayerStats] 골드 +{amount} 획득! 총 골드: {gold}");
+        if (GameManager.Instance != null)
+            GameManager.Instance.CheckQuota();
     }
 }
