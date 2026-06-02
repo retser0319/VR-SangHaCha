@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Settings")]
-    public float dayDuration = 300f; // 5분
+    public float dayDuration = 600f; // 10분
     public int baseQuota = 100;
     public int quotaIncrement = 50;
 
