@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430841697005043554}
   m_Layer: 0
-  m_Name: Wall BayDoor
+  m_Name: Wall BayDoor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
