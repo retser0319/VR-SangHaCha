@@ -49,6 +49,10 @@ public class ShelfBoxSpawner : MonoBehaviour
 
         var obj = Instantiate(prefab, spawnPos, Quaternion.identity);
 
+        // MeshCollider는 convex=true 설정 (Rigidbody와 호환)
+        foreach (var mc in obj.GetComponentsInChildren<MeshCollider>())
+            mc.convex = true;
+
         // Rigidbody 없으면 추가
         var rb = obj.GetComponent<Rigidbody>();
         if (rb == null)
@@ -63,6 +67,32 @@ public class ShelfBoxSpawner : MonoBehaviour
         grab.useDynamicAttach = true;
         grab.throwOnDetach = true;
 
-        Debug.Log("[ShelfSpawner] " + prefab.name + " 스폰 완료: " + spawnPos);
+        // PropStats 부착 및 스탯 설정
+        var stats = obj.GetComponent<PropStats>();
+        if (stats == null)
+            stats = obj.AddComponent<PropStats>();
+
+        switch (prefab.name)
+        {
+            case "Crate Short":
+                stats.maxHealth = Random.Range(10, 21);
+                stats.gold = 20;
+                break;
+            case "Crate Long":
+                stats.maxHealth = Random.Range(10, 16);
+                stats.gold = 30;
+                break;
+            case "Barrel":
+                stats.maxHealth = Random.Range(5, 11);
+                stats.gold = 50;
+                break;
+            default:
+                stats.maxHealth = 10;
+                stats.gold = 10;
+                break;
+        }
+        stats.health = stats.maxHealth;
+
+        Debug.Log($"[ShelfSpawner] {prefab.name} 스폰 완료: pos={spawnPos}, 체력={stats.health}, 골드={stats.gold}");
     }
 }
