@@ -57,11 +57,13 @@ public class PlayerMoveProvider : DynamicMoveProvider
         m_RunAction.action?.Disable();
     }
 
-    void Update()
+    protected new void Update()
     {
+        // 부모(ContinuousMoveProvider)의 실제 이동 로직을 먼저 실행해야 리그가 움직인다.
         UpdateRunState();
-        HandleStairClimbing();
         moveSpeed = m_IsRunning ? m_RunSpeed : m_WalkSpeed;
+        base.Update();
+        HandleStairClimbing();
     }
 
     void UpdateRunState()
