@@ -86,15 +86,15 @@ public class ShelfBoxSpawner : MonoBehaviour
         switch (prefab.name)
         {
             case "Crate Short":
-                stats.maxHealth = Random.Range(10, 21);
+                stats.maxHealth = 8;
                 stats.gold = 20;
                 break;
             case "Crate Long":
-                stats.maxHealth = Random.Range(10, 16);
+                stats.maxHealth = 7;
                 stats.gold = 30;
                 break;
             case "Barrel":
-                stats.maxHealth = Random.Range(5, 11);
+                stats.maxHealth = 6;
                 stats.gold = 50;
                 break;
             default:
@@ -103,6 +103,10 @@ public class ShelfBoxSpawner : MonoBehaviour
                 break;
         }
         stats.health = stats.maxHealth;
+
+        // 반납 구역 랜덤 배정
+        string[] zones = new string[] { "A", "B", "C" };
+        stats.assignedZone = zones[Random.Range(0, zones.Length)];
 
         Debug.Log($"[ShelfSpawner] {prefab.name} 스폰 완료: pos={spawnPos}, 체력={stats.health}, 골드={stats.gold}");
     }

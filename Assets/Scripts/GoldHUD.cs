@@ -1,32 +1,49 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GoldHUD : MonoBehaviour
 {
-    private Text _goldText;
+    public static GoldHUD Instance { get; private set; }
+
+    public Text _goldText;
+
+    private TextMeshProUGUI _areaText;
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
+    }
 
     void Start()
     {
-        // 씬에서 GoldText 찾기
-        var allTexts = GameObject.FindObjectsOfType<Text>(true);
-        foreach (var t in allTexts)
-        {
-            if (t.gameObject.name == "GoldText")
-            {
-                _goldText = t;
-                break;
-            }
-        }
+        var areaGo = GameObject.Find("AreaText");
+        if (areaGo != null)
+            _areaText = areaGo.GetComponent<TextMeshProUGUI>();
 
-        if (_goldText == null)
-            Debug.LogError("[GoldHUD] GoldText를 찾을 수 없습니다!");
-        else
-            Debug.Log("[GoldHUD] GoldText 연결 완료");
+        if (_areaText != null)
+            _areaText.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (_goldText != null && PlayerStats.Instance != null)
             _goldText.text = "Gold: " + PlayerStats.Instance.gold;
+    }
+
+    public void ShowAreaText(string zone)
+    {
+        if (_areaText == null) return;
+        _areaText.text = "Area: " + zone;
+        _areaText.gameObject.SetActive(true);
+    }
+
+    public void HideAreaText()
+    {
+        if (_areaText == null) return;
+        _areaText.gameObject.SetActive(false);
     }
 }

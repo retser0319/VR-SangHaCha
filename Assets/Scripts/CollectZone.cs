@@ -11,26 +11,20 @@ public class CollectZone : MonoBehaviour
         if (stats == null) stats = other.GetComponentInParent<PropStats>();
         if (stats == null) return;
 
-        bool correct = false;
-        switch (zoneType)
-        {
-            case ZoneType.A: correct = other.gameObject.name.Contains("Crate Short"); break;
-            case ZoneType.B: correct = other.gameObject.name.Contains("Crate Long"); break;
-            case ZoneType.C: correct = other.gameObject.name.Contains("Barrel"); break;
-        }
+        bool correct = stats.assignedZone == zoneType.ToString();
 
         if (correct)
         {
             int earned = stats.gold;
             if (PlayerStats.Instance != null)
                 PlayerStats.Instance.AddGold(earned);
-            Debug.Log($"[CollectZone {zoneType}] {other.gameObject.name} 올바른 구역! 골드 +{earned}");
+            Debug.Log($"[CollectZone {zoneType}] {other.gameObject.name} 정답! 골드 +{earned}");
         }
         else
         {
             if (GameManager.Instance != null)
                 GameManager.Instance.AddDebt(50);
-            Debug.Log($"[CollectZone {zoneType}] {other.gameObject.name} 잘못된 구역! -50 골드 패널티");
+            Debug.Log($"[CollectZone {zoneType}] {other.gameObject.name} 오답! (배정={stats.assignedZone}) -50 패널티");
         }
 
         Destroy(other.gameObject);
