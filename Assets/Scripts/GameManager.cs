@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
                 PlayerStats.Instance.gold = 0;
 
             yield return StartCoroutine(StartDay());
+            yield break;
         }
 
         ResetPlayerPosition();
